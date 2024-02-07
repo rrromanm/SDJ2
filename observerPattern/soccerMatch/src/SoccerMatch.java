@@ -9,7 +9,6 @@ public class SoccerMatch implements PropertyChangeListener
 	private String team0 = "Dream Team";
 	private String team1 = "Old Boys";
 	private PropertyChangeSupport support;
-
 	public void startMatch() {
 		support = new PropertyChangeSupport(this);
 		System.out.println("Match starting \n\n");
@@ -22,6 +21,22 @@ public class SoccerMatch implements PropertyChangeListener
 		OldBoysFan oldBoysFan = new OldBoysFan();
 		support.addPropertyChangeListener("OldBoysScored", oldBoysFan);
 		support.addPropertyChangeListener("DreamTeamScored", oldBoysFan);
+
+		Referee referee = new Referee();
+		support.addPropertyChangeListener("DreamTeamRoughTackle", referee);
+		support.addPropertyChangeListener("OldBoysRoughTackle", referee);
+
+		AngryCoach coach = new AngryCoach();
+		support.addPropertyChangeListener("DreamTeamScored", coach);
+		support.addPropertyChangeListener("DreamTeamRoughTackle", coach);
+
+		ScoreBoard scoreBoard = new ScoreBoard();
+		support.addPropertyChangeListener("OldBoysScored", scoreBoard);
+		support.addPropertyChangeListener("DreamTeamScored", scoreBoard);
+
+		Medic medic = new Medic();
+		support.addPropertyChangeListener("DreamTeamRoughTackle", medic);
+		support.addPropertyChangeListener("OldBoysRoughTackle", medic);
 
 		for(int i = 0; i < 90; i++) {
 
@@ -48,12 +63,12 @@ public class SoccerMatch implements PropertyChangeListener
 
 	private void roughTackle(int whichTeam) {
 		if(whichTeam == 0) {
-			support.firePropertyChange("DreamTeamRoughTackle", null, "Team 0 made a rough tackle");
 			System.out.println("Team 0 made a rough tackle");
+			support.firePropertyChange("DreamTeamRoughTackle", null, "Team 0 made a rough tackle");
 			// TODO team0 made a rough tackle
 		} else {
-			support.firePropertyChange("OldBoysRoughTackle", null, "Team 1 made a rough tackle" );
 			System.out.println("Team 1 made a rough tackle");
+			support.firePropertyChange("OldBoysRoughTackle", null, "Team 1 made a rough tackle" );
 			// TODO team1 made a rough tackle
 		}
 	}
