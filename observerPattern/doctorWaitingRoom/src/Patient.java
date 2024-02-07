@@ -4,21 +4,37 @@ import java.beans.PropertyChangeListener;
 public class Patient implements PropertyChangeListener
 {
   private int ticketNumber;
-  public Patient(int pattientNumber){
-    this.ticketNumber = pattientNumber - 1;
+  private int currentTicket;
+  public Patient(int ticketNumber){
+    this.ticketNumber = ticketNumber;
   }
-  public int getTicketNumber() {
+
+  public int getTicketNumber()
+  {
     return ticketNumber;
+  }
+  private void changeNumber()
+  {
+    if(ticketNumber == currentTicket){
+      System.out.println("Patient " + ticketNumber + " enters Doctor's Room");
+    }
+    else if (ticketNumber > currentTicket){
+      System.out.println("Patient " + ticketNumber + " looks up");
+      System.out.println("Patient " + ticketNumber + " goes back to looking at phone");
+    }
+    else{
+      System.out.println("Patient " + ticketNumber + " Leaves");
+    }
   }
 
   @Override public void propertyChange(PropertyChangeEvent evt)
   {
-    if ("ticketNumber".equals(evt.getPropertyName())) {
-      System.out.println("Patient's ticket number changed!");
-      System.out.println("Old ticket number: " + evt.getOldValue());
-      System.out.println("New ticket number: " + evt.getNewValue());
-
+    if ("changeNumber".equals(evt.getPropertyName())) {
+      currentTicket = (int) evt.getNewValue();
+      changeNumber();
       // You can add custom logic here to react to the ticket number change
     }
   }
+
+
 }

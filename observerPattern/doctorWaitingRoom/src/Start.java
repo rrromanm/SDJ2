@@ -25,11 +25,6 @@ public class Start {
     // Print the final ticket number
     System.out.println("Updated Ticket Number: " + waitingRoom.getCurrentTicketNumber());
 
-    // Unregister patients from the waiting room
-    waitingRoom.leaveWaitingRoom(patient1);
-    waitingRoom.leaveWaitingRoom(patient2);
-    waitingRoom.leaveWaitingRoom(patient3);
-
     // Changes to patients won't be reflected anymore
     // patient1.setTicketNumber(55);  // This line won't compile
 

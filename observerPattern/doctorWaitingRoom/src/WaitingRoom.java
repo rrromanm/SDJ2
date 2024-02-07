@@ -12,12 +12,11 @@ public class WaitingRoom
   public int getCurrentTicketNumber(){
     return currentTicketNumber;
   }
-
   public void ding(){
     System.out.println("Diing!");
     currentTicketNumber += 1;
 
-    support.firePropertyChange("currentTicketNumber", currentTicketNumber - 1, currentTicketNumber);
+    support.firePropertyChange("changeNumber", currentTicketNumber - 1, currentTicketNumber);
   }
   public void enterWaitingRoom (Patient patient){
     support.addPropertyChangeListener(patient);
