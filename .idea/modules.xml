@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/observerPattern/observerPattern.iml" filepath="$PROJECT_DIR$/observerPattern/observerPattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/observerPattern/register/register.iml" filepath="$PROJECT_DIR$/observerPattern/register/register.iml" />
       <module fileurl="file://$PROJECT_DIR$/observerPattern/soccerMatch/soccerMatch.iml" filepath="$PROJECT_DIR$/observerPattern/soccerMatch/soccerMatch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/statePattern/statePattern.iml" filepath="$PROJECT_DIR$/statePattern/statePattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/observerPattern/trafficLight/trafficLight.iml" filepath="$PROJECT_DIR$/observerPattern/trafficLight/trafficLight.iml" />
     </modules>
   </component>

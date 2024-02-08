@@ -1,6 +1,6 @@
 package dk.via.traffic;
 
-public class Car {
+public class Car{
     private boolean isRunning;
     private final String license;
 
