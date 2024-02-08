@@ -3,6 +3,9 @@ package dk.via.simplephone;
 public class Phone
 {
   private SpeakerState state;
+  public Phone(){
+    state = new Sound();
+  }
   public void onClick(){
     state.click(this);
   }

@@ -4,13 +4,11 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 public class TrafficLight {
-    private LightColor color;
     private final Lights lights;
     private TrafficState state;
     private final PropertyChangeSupport support;
 
     public TrafficLight() {
-        color = LightColor.RED;
         lights = new Lights();
         lights.turnOn(Lights.RED);
         lights.printLights();
@@ -18,15 +16,13 @@ public class TrafficLight {
         state = new Red();
     }
 
-    public LightColor getColor() {
-        return color;
+    public TrafficState getColor() {
+        return state;
     }
 
     public void next() {
-       LightColor oldColor = color;
        state.next(this);
        lights.printLights();
-       support.firePropertyChange("light", oldColor, color);
     }
 
     public boolean isTurnedOn(String light) {
