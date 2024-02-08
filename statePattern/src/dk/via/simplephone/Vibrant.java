@@ -2,9 +2,6 @@ package dk.via.simplephone;
 
 public class Vibrant implements SpeakerState
 {
-  public Vibrant(){
-
-  }
   @Override public void click(Phone phone)
   {
     phone.setState(new Silent());
