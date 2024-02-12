@@ -12,4 +12,14 @@ public class Vibrant implements SpeakerState
     System.out.println("BZZZZ");
     phone.setState(this);
   }
+
+  @Override public void volumeUp(Phone phone)
+  {
+    phone.setState(new Sound());
+  }
+
+  @Override public void volumeDown(Phone phone)
+  {
+
+  }
 }

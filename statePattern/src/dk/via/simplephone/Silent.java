@@ -11,4 +11,14 @@ public class Silent implements SpeakerState
   {
     phone.setState(this);
   }
+
+  @Override public void volumeUp(Phone phone)
+  {
+    phone.setState(new Sound());
+  }
+
+  @Override public void volumeDown(Phone phone)
+  {
+
+  }
 }
