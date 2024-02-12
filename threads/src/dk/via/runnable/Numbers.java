@@ -1,13 +1,17 @@
 package dk.via.runnable;
 
 public class Numbers implements Runnable {
-  public Numbers() {
+  private int numbers;
+  private int startNum;
+  public Numbers(int numbers, int startNum) {
+    this.numbers = numbers;
+    this.startNum = startNum;
   }
 
   @Override
-  public void run() {
-    for(int i = 0; i < 1000; i++) {
-      System.out.println(i);
+  public void run() {;
+    for(int i = 0; i < numbers; i++) {
+      System.out.println(startNum+=1);
     }
   }
 }
