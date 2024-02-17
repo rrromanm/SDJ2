@@ -4,9 +4,11 @@ public class Thermometer implements Runnable
 {
   private String id;
   private double t;
-  public Thermometer(String id, double t){
+  private int d;
+  public Thermometer(String id, double t, int d){
     this.id = id;
     this.t = t;
+    this.d = d;
   }
   private double temperature(double t, int p, int d, double t0, int s)
   {
@@ -26,7 +28,7 @@ public class Thermometer implements Runnable
   @Override public void run()
   {
     while(true){
-      t = temperature(t, 0, 1, 0, 6);
+      t = temperature(t, 2, d, 0, 6);
       System.out.println(id + " " + t);
       try
       {
